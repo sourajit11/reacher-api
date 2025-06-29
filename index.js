@@ -4,6 +4,11 @@ const { exec } = require("child_process");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// ✅ Add this ping route
+app.get("/ping", (req, res) => {
+  res.send("pong");
+});
+
 app.get("/check", (req, res) => {
   const email = req.query.email;
   if (!email) {
