@@ -10,7 +10,7 @@ app.get("/check", (req, res) => {
     return res.status(400).json({ error: "Please provide ?email=..." });
   }
 
-  const command = `../target/release/check_if_email_exists ${email}`;
+  const command = `./check_if_email_exists ${email}`;
 
   exec(command, (err, stdout, stderr) => {
     if (err) {
